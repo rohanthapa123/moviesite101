@@ -29,21 +29,21 @@ const Navbar = () => {
         <div className="absolute top-3">
           <figure className="text-black">LOGO</figure>
         </div>
-        <ul className="flex justify-end items-center gap-10 text-black absolute top-4 right-0">
+        <ul className="md:flex justify-end items-center gap-10 text-black absolute top-4 right-20 hidden">
           <li>Movies</li>
           <li>Anime</li>
           <li>Drama</li>
-          <div className="input-section">
-            <input
-              type="text"
-              name="search_bar"
-              className={`w-48 h-6 rounded-md focus:outline-none text-slate-800 text-center focus:text-start`}
-              placeholder="Search movies.. 🔎 "
-            />
-          </div>
         </ul>
+        <div className="input-section">
+          <input
+            type="text"
+            name="search_bar"
+            className={`lg:w-96 w-48 h-8 rounded-md focus:outline-none text-slate-800 text-center focus:text-start absolute top-4 lg:right-[450px] right-0`}
+            placeholder="Search movies.. 🔎 "
+          />
+        </div>
       </header>
     </>
   );
-}
+};
 export default Navbar;
