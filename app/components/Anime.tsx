@@ -9,7 +9,7 @@ const Anime = () => {
     // print results
     console.log(data);
   });
-  return <div className="w-full h-screen">Anime</div>;
+  return <div className="w-full h-screen bg-red-200">Anime</div>;
 };
 
 export default Anime;
