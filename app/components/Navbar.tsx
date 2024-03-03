@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [navSatate, setNavState] = useState(false);
+  const [navState, setNavState] = useState(false);
 
   const onNavScroll = () => {
     if (window.scrollY > 30) {
@@ -18,29 +18,29 @@ const Navbar = () => {
       window.removeEventListener("scroll", onNavScroll);
     };
   }, []);
+
+  const headerClass = navState
+    ? "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-50 blur-xl bg-slate-300 bg-custom-new cursor-pointer"
+    : "w-full h-[60px] absolute top-0 left-0 right-0 opacity-100 z-[200] bg-slate-300 cursor-pointer";
+
   return (
     <>
-      <header
-        className={
-          !navSatate
-            ? "absolute top-7 left-0 right-0 opacity-100 z-[200]  bg-slate-300"
-            : "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-50 blur-effect-theme  bg-slate-300"
-        }
-      >
-        <nav className="flex items-center justify-between nike-container">
-          <div className="flex items-center">LOGO</div>
-        </nav>
-        <ul className="flex items-center justify-center gap-2">
-          <li className="grid items-center">item 1</li>
-          <li className="grid items-center">item 2</li>
-          <li className="grid items-center">
-            <button
-              type="button"
-              className="border-none outline-none active:scale-110 transition-all duration-300 relative"
-            >
-              item 3
-            </button>
-          </li>
+      <header className={headerClass}>
+        <div className="absolute top-3">
+          <figure className="text-black">LOGO</figure>
+        </div>
+        <ul className="flex justify-end items-center gap-10 text-black absolute top-4 right-0">
+          <li>Movies</li>
+          <li>Anime</li>
+          <li>Drama</li>
+          <div className="input-section">
+            <input
+              type="text"
+              name="search_bar"
+              className={`w-48 h-6 rounded-md focus:outline-none text-slate-800 text-center focus:text-start`}
+              placeholder="Search movies.. 🔎 "
+            />
+          </div>
         </ul>
       </header>
     </>
