@@ -7,6 +7,7 @@ const Navbar = () => {
   const [navState, setNavState] = useState(false);
 
   const onNavScroll = () => {
+    console.log("Scrolling...", window.scrollY);
     if (window.scrollY > 30) {
       setNavState(true);
     } else {
@@ -22,8 +23,8 @@ const Navbar = () => {
   }, []);
 
   const headerClass = navState
-    ? "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z`-`50 blur-xl bg-slate-300 bg-slate-300 cursor-pointer"
-    : "w-full h-[60px] absolute top-0 left-0 right-0 opacity-100 shadow-md shadow-amber-800 z-[200] bg-slate-800 cursor-pointer";
+    ? "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-50 bg-slate-300 cursor-pointer"
+    : "w-full h-[60px] absolute top-0 left-0 right-0 opacity-100 shadow-md shadow-slate-300 z-[200] bg-slate-900 cursor-pointer";
 
   return (
     <>
@@ -58,4 +59,5 @@ const Navbar = () => {
     </>
   );
 };
+
 export default Navbar;
