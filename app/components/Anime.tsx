@@ -1,11 +1,11 @@
 "use client";
-import { ANIME, IAnimeResult } from "@consumet/extensions";
+import { ANIME, IAnimeResult, ISearch } from "@consumet/extensions";
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { error } from "console";
 
 const Anime = () => {
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<IAnimeResult[]>([]);
 const [loading, setLoading] = useState<boolean>(true);
   function getAnime() {
 
