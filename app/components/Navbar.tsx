@@ -23,14 +23,14 @@ const Navbar = () => {
   }, []);
 
   const headerClass = navState
-    ? "fixed top-0 left-0 right-0 h-[9vh] flex items-center justify-center opacity-100 z-50 bg-slate-300 cursor-pointer"
-    : "w-full h-[60px] absolute top-0 left-0 right-0 opacity-100 shadow-md shadow-slate-300 z-[200] bg-slate-900 cursor-pointer";
+    ? "fixed top-0  h-[9vh]  z-50  bg-white/60 backdrop-blur-sm "
+    : "w-full h-[9vh] absolute top-0 left-0 right-0 opacity-100 shadow-md shadow-slate-300 z-[200] bg-slate-900 ";
 
   return (
     <>
-      <header className={headerClass}>
-        <div className="relative">
-          <div className="absolute top-2 left-5">
+      <header className={`${headerClass}  ease-in transition-all sticky  `}>
+        <div className=" w-full h-full flex flex-row justify-around items-center">
+          <div className="">
             <figure className="">
               <Image
                 src="/images/logo2.png"
@@ -40,19 +40,23 @@ const Navbar = () => {
               />
             </figure>
           </div>
-          <ul className="md:flex justify-end items-center gap-10 text-white absolute top-4 right-20 hidden">
-            <li>Movies</li>
-            <li>Anime</li>
-            <li>Drama</li>
-          </ul>
-          <div className="relative">
+
+          <div className="">
             <input
               type="text"
               name="search_bar"
-              className={`lg:w-96 w-48 h-8 p-4 rounded-md focus:outline-none text-slate-800 text-center focus:text-start absolute top-4 lg:right-[450px] right-0`}
+              className={`lg:w-96 w-48 h-8 p-4 rounded-md focus:outline-none text-slate-800 text-center focus:text-start`}
               placeholder={`Search movies.. 🔎`}
             />
             {/* <Button value="search" /> */}
+          </div>
+          <div>
+
+            <ul className={`md:flex justify-end align-middle items-center gap-10  ${navState ? "text-black" : "text-white"} `}>
+              <li>Movies</li>
+              <li>Anime</li>
+              <li>Drama</li>
+            </ul>
           </div>
         </div>
       </header>

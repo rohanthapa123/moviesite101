@@ -22,7 +22,7 @@ export default function RootLayout({
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet"></link> */}
       <body className={inter.className}>
         <Navbar />
-        <div className="mt-[9vh]">
+        <div className="mt-5">
 
         {children}
         </div>
