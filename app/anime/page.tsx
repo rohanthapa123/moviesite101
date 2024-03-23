@@ -2,7 +2,6 @@
 import { ANIME, IAnimeResult, ISearch } from "@consumet/extensions";
 import React, { useEffect, useState } from "react";
 
-import { error } from "console";
 import Card from "../components/Card";
 
 const Anime = () => {
